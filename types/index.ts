@@ -12,6 +12,7 @@ export interface ICategory {
   id: string,
   name: string,
   description?: string
+  products?: IProduct[]
   createdAt: string,
   updatedAt: string
 }

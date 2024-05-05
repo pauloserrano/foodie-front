@@ -1,9 +1,26 @@
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 50px;
   padding: 0.5rem 1rem;
   background-color: red;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+  display: flex;
+}
+
+.nav-container li:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+.nav-container li a {
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: black;
+  color: white;
 }

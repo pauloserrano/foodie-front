@@ -4,7 +4,6 @@ import { Header, Menu } from "@/components";
 export default function Home() {
   return (
     <main>
-      <Header />
       <Menu />
     </main>
   );

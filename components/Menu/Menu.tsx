@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Product } from "@/components"
 import { IMenu } from '@/types'
 import styles from "./Menu.module.css"
@@ -18,7 +17,7 @@ export async function Menu() {
   
   return (
     <section className={styles["menu-container"]}>
-      <h3 className={styles["menu-title"]}>{menu.isDaytime ? "Daytime Menu" : "Nightime Menu"}</h3>
+      <h3 className={styles["menu-title"]}>Current Menu: {menu.isDaytime ? "Daytime" : "Nightime"}</h3>
       <ul className={styles["product-list"]}>
         {menu.products.map(({ id, name, description, imageSrc, price }) => (
           <Product 
