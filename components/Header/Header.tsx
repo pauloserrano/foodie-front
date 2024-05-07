@@ -14,6 +14,9 @@ export function Header() {
           <Link href="/product">Products</Link>
         </li>
         <li>
+          <Link href="/category/new">Create Category</Link>
+        </li>
+        <li>
           <Link href="/product/new">Create Product</Link>
         </li>
         <li>

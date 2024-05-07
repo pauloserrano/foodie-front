@@ -40,15 +40,6 @@ export async function Category() {
                 price={product.price}
               />
             ))}
-            {category.products?.map(product => (
-              <Product 
-                key={product.id}
-                name={product.name}
-                description={product.description}
-                imageSrc={product.imageSrc}
-                price={product.price}
-              />
-            ))}
           </ul>
         </div>
       ))}
