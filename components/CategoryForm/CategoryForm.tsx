@@ -1,11 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
-import styles from "./Form.module.css"
+import styles from "./CategoryForm.module.css"
 
-export function Form() {
-  const router = useRouter()
+export function CategoryForm() {
   const [name, setName] = useState<string>("")
   const [description, setDescription] = useState<string>("")
   const [lorem, setLorem] = useState<string>("")
@@ -23,7 +21,8 @@ export function Form() {
     const res = await fetch("http://localhost:4000/category", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(category)
+      body: JSON.stringify(category),
+      cache: "no-store"
     })
 
     if (res.status === 201) {

@@ -3,7 +3,7 @@ import { IMenu } from '@/types'
 import styles from "./Menu.module.css"
 
 async function getMenu() {
-  const res = await fetch('http://localhost:4000/menu/now')
+  const res = await fetch('http://localhost:4000/menu/now', { cache: "no-store" })
  
   if (!res.ok) {
     throw new Error('Failed to fetch data')
