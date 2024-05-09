@@ -1,22 +1,14 @@
 import { Product } from "@/components"
+import { getCategoryById, getCategories } from "@/services"
 import { ICategory } from "@/types"
 import styles from "./Category.module.css"
 
-async function getCategoryById(id: string) {
-  const res = await fetch(`http://localhost:4000/category/${id}`, { cache: "no-store" })
-  const category: ICategory = await res.json()
-  
-  return category
-}
-
-async function getCategories() {
-  const res = await fetch('http://localhost:4000/category', { cache: "no-store" })
-  const categories: ICategory[] = await res.json()
+async function getCategoriesProducts() {
+  const categories = await getCategories()
 
   const categoriesWithProducts: ICategory[] = []
   for(let i = 0; i < categories.length; i++) {
     const res = await getCategoryById(categories[i].id)
-    console.log(res)
     categoriesWithProducts.push(res)
   }
 
@@ -24,7 +16,7 @@ async function getCategories() {
 }
 
 export async function Category() {
-  const categories: ICategory[] = await getCategories()
+  const categories: ICategory[] = await getCategoriesProducts()
 
   return (
     <div>

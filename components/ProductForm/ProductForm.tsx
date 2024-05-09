@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ICategory, IMenu } from "@/types"
 import styles from "./ProductForm.module.css"
+import { createProduct } from "@/services"
 
 interface ProductFormProps {
   categories: ICategory[],
@@ -27,19 +28,10 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
     try {
       setIsLoading(true)
 
-      const product = {
+      await createProduct({
         ...form,
         price: ++form.price,
         description: form.description.length > 0 ? form.description : null
-      }
-
-      console.log(product)
-
-      await fetch("http://localhost:4000/product", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(product),
-        cache: "no-store"
       })
       
     } catch (error) {

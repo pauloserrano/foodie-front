@@ -2,12 +2,12 @@ import { ProductForm } from "@/components/ProductForm/ProductForm";
 import { ICategory, IMenu } from "@/types";
 
 async function getCategories() {
-  const res = await fetch("http://localhost:4000/category", { cache: "no-store" })
+  const res = await fetch(`${process.env.DB_BASE_URL}/category`, { cache: "no-store" })
   return await res.json()
 }
 
 async function getMenus() {
-  const res = await fetch("http://localhost:4000/menu", { cache: "no-store" })
+  const res = await fetch(`${process.env.DB_BASE_URL}/menu`, { cache: "no-store" })
   return await res.json()
 }
 
