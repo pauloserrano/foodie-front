@@ -14,8 +14,8 @@ export function Product({ name, price, imageSrc, description }: ProductProps) {
         alt={name}
         src={imageSrc}
         className={styles["menu-image"]}
-        width={600}
-        height={400}
+        width={300}
+        height={200}
       />
     </li>
   )
