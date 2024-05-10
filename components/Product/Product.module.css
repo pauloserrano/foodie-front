@@ -1,3 +1,5 @@
 .product-container {
-  background-color: grey;
+  background-color: red;
+  width: 100%;
+  overflow: auto;
 }

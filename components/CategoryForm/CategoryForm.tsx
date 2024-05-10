@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import styles from "./CategoryForm.module.css"
 import { createCategory } from "@/services"
+import styles from "./CategoryForm.module.css"
 
 export function CategoryForm() {
   const [name, setName] = useState<string>("")
@@ -29,8 +29,8 @@ export function CategoryForm() {
 
   return (
     <form className={styles["form-container"]} onSubmit={handleSubmit}>
-      <label htmlFor="">
-        <span>Name: </span>
+      <label className={styles["input-container"]}>
+        <span>Name</span>
         <input 
           required
           type="text"
@@ -38,21 +38,16 @@ export function CategoryForm() {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
-      <label htmlFor="">
-        <span>Description: </span>
+      <label className={styles["input-container"]}>
+        <span>Description</span>
         <textarea 
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </label>
 
-      <button 
-        type="submit"
-        disabled={isLoading}
-      >
-        <span>
+      <button className={styles["btn-submit"]} type="submit" disabled={isLoading}>
           {isLoading ? "Adding..." : "Create"}
-        </span>
       </button>
     </form>
   )

@@ -1,9 +1,10 @@
 import { CategoryForm } from "@/components";
+import styles from "./style.module.css"
 
 export default function NewCategory() {
   return (
-    <div>
-      <h3>Create new Category</h3>
+    <div className={styles.container}>
+      <h3 className={styles.title}>Create new Category</h3>
       <CategoryForm />
     </div>
   )

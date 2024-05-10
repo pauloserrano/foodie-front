@@ -40,7 +40,7 @@ export function MenuForm() {
 
   return (
     <form className={styles["form-container"]} onSubmit={handleSubmit}>
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Name: </span>
         <input 
           required
@@ -49,14 +49,14 @@ export function MenuForm() {
           onChange={handleForm}
         />
       </label>
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Description: </span>
         <textarea 
           value={form.description}
           onChange={handleForm}
         />
       </label>
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Turno: </span>
         <select
           required
@@ -68,13 +68,8 @@ export function MenuForm() {
         </select>
       </label>
 
-      <button 
-        type="submit"
-        disabled={isLoading}
-      >
-        <span>
+      <button className={styles["btn-submit"]} type="submit" disabled={isLoading}>
           {isLoading ? "Adding..." : "Create"}
-        </span>
       </button>
     </form>
   )

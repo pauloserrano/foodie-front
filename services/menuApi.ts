@@ -11,7 +11,10 @@ export async function getMenus(): Promise<IMenu[]> {
 export async function getCurrentMenu(): Promise<IMenu> {
   const res = await fetch(`${process.env.DB_BASE_URL}/menu/now`, { cache: "no-store" })
  
-  if (!res.ok) throw new Error('Request failed')
+  if (!res.ok) {
+    console.log(res)
+    throw new Error('Request failed')
+  }
  
   return res.json()
 }

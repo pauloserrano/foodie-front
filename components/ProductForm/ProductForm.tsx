@@ -17,8 +17,8 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
     description: "",
     imageSrc: "",
     price: 0,
-    menuId: "",
-    categoryId: ""
+    menuId: menus[0].id,
+    categoryId: categories[0].id
   })
 
 
@@ -51,7 +51,7 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
 
   return (
     <form className={styles["form-container"]} onSubmit={handleSubmit}>
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Name: </span>
         <input 
           required
@@ -62,7 +62,7 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
         />
       </label>
 
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Description: </span>
         <textarea 
           required
@@ -72,7 +72,7 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
         />
       </label>
       
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Image URL: </span>
         <input 
           required
@@ -83,7 +83,7 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
         />
       </label>
 
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Price: </span>
         <input 
           required
@@ -94,7 +94,7 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
         />
       </label>
 
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Menu: </span>
         <select
           required
@@ -108,7 +108,7 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
         </select>
       </label>
       
-      <label htmlFor="">
+      <label className={styles["input-container"]}>
         <span>Category: </span>
         <select
           required
@@ -122,13 +122,8 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
         </select>
       </label>
 
-      <button 
-        type="submit"
-        disabled={isLoading}
-      >
-        <span>
+      <button className={styles["btn-submit"]} type="submit" disabled={isLoading}>
           {isLoading ? "Adding..." : "Create"}
-        </span>
       </button>
     </form>
   )

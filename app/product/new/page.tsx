@@ -1,5 +1,6 @@
 import { ProductForm } from "@/components/ProductForm/ProductForm";
 import { ICategory, IMenu } from "@/types";
+import styles from "./style.module.css"
 
 async function getCategories() {
   const res = await fetch(`${process.env.DB_BASE_URL}/category`, { cache: "no-store" })
@@ -18,8 +19,8 @@ export default async function NewProduct() {
   const menus: IMenu[] = await getMenus()
 
   return (
-    <div>
-      <h3>Create new Product</h3>
+    <div className={styles.container}>
+      <h3 className={styles.title}>Create new Product</h3>
       <ProductForm 
         categories={categories}
         menus={menus}
