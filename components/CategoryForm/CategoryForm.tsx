@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { createCategory } from "@/services"
-import styles from "./CategoryForm.module.css"
+import styles from "../Form/Form.module.css"
 
 export function CategoryForm() {
   const [name, setName] = useState<string>("")

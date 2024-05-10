@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import { ICategory, IMenu } from "@/types"
-import styles from "./ProductForm.module.css"
 import { createProduct } from "@/services"
+import styles from "../Form/Form.module.css"
 
 interface ProductFormProps {
   categories: ICategory[],

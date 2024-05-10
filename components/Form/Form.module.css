@@ -1,2 +1,34 @@
+.form-container input,
+.form-container textarea,
+.form-container select {
+  color: black;
+}
+
 .form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-container > * {
+  margin: 1rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: min(90vw, 400px);
+}
+
+.input-container input,
+.input-container select,
+.input-container {
+  padding: 0.5rem 1rem;
+}
+
+.btn-submit {
+  background-color: red;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
 }

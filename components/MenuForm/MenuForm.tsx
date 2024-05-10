@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import styles from "./MenuForm.module.css"
 import { createMenu } from "@/services"
+import styles from "../Form/Form.module.css"
 
 export function MenuForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
