@@ -121,7 +121,7 @@ export function ProductForm({ categories, menus }: ProductFormProps) {
           ))}
         </select>
       </label>
-
+      
       <button className={styles["btn-submit"]} type="submit" disabled={isLoading}>
           {isLoading ? "Adding..." : "Create"}
       </button>
